@@ -21,10 +21,12 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
 
     public $js = [
-        'app.js'
+        'vue/js/vendor.js',
+        'vue/js/app.js',
     ];
 
     public $css = [
-        'css/index.css'
+        'vue/css/vendor.css',
+        'vue/css/app.css',
     ];
 }

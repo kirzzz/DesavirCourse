@@ -17,14 +17,14 @@ $this->beginPage() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php
     $this->registerCsrfMetaTags() ?>
-    <title>Desavir</title>
+    <title>YiiSIde</title>
     <?php
     $this->head() ?>
 </head>
 <body>
 <?php
 $this->beginBody() ?>
-<div id="app">
+<div id="q-app">
 
 </div>
 <?php

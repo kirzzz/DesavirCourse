@@ -1,0 +1,80 @@
+// Quasar Sass (& SCSS) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+$primary: #1f3247
+$secondary: #5f78a6
+$accent: #9680ab
+
+$dark: #363534
+$dark-page: #121212
+
+$positive: #234d42
+$negative: #66362e
+$info: #4f597f
+$warning: #F2C037
+
+$brand-colors: ('primary': $primary,'secondary': $secondary,'dark': $dark,'dark-page': $dark-page,'info': $info,'negative': $negative)
+
+//SPACES
+$space-base   : 16px !default
+$space-x-base : $space-base !default
+$space-y-base : $space-base !default
+
+$space-none : (x: 0, y: 0) !default
+$space-xs   : (x: ($space-x-base * .25), y: ($space-y-base * .25)) !default
+$space-sm   : (x: ($space-x-base * .5), y: ($space-y-base * .5)) !default
+$space-md   : (x: $space-x-base, y: $space-y-base) !default
+$space-lg   : (x: ($space-x-base * 1.5), y: ($space-y-base * 1.5)) !default
+$space-xl   : (x: ($space-x-base * 3), y: ($space-y-base * 3)) !default
+$space-2xl   : (x: ($space-x-base * 5), y: ($space-y-base * 5)) !default
+$space-3xl   : (x: ($space-x-base * 7.5), y: ($space-y-base * 7.5)) !default
+$space-4xl   : (x: ($space-x-base * 10), y: ($space-y-base * 10)) !default
+
+// sorry for long line; we need .sass and it doesn't support multi-line list
+$spaces: ('none': $space-none, 'xs': $space-xs, 'sm': $space-sm, 'md': $space-md, 'lg': $space-lg, 'xl': $space-xl, '2xl': $space-2xl, '3xl': $space-3xl, '4xl': $space-4xl) !default
+
+@import '../../node_modules/quasar/src/css/helpers/string.sass'
+
+@import '../../node_modules/quasar/src/css/variables.sass'
+
+@mixin fga($name, $size)
+
+  @media (min-width: $size)
+    #{str-fr('.text-left<name>', $name)}
+      text-align: left
+    #{str-fr('.text-right<name>', $name)}
+      text-align: right
+    #{str-fr('.text-center<name>', $name)}
+      text-align: center
+    #{str-fr('.text-end<name>', $name)}
+      text-align: end
+
+@each $name, $size in $sizes
+  @include fga("-" + $name, $size)
+
+@each $name, $color in $brand-colors
+  #{str-fr('.text-underline-<name>::before', $name)}
+    position: absolute
+    display: block
+    content: ''
+    left: 0
+    bottom: -3px
+    height: 2px
+    width: 100%
+    background-color: $color
+    z-index: 2
+
+
+
+
+
